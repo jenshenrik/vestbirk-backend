@@ -5,5 +5,14 @@ services:
         image: vestbirk-nginx:latest
         ports:
             - "80:80"
-              #        depends_on:
-              #            - api
+        depends_on:
+            - api
+
+    api:
+        image: vestbirk-api:latest
+        environment:
+            - VESTBIRK_ENVIRONMENT=development
+            - VESTBIRK_DEBUG=TRUE
+            - VESTBIRK_ALLOWED_HOSTS=api
+        ports:
+            - 8000:8000

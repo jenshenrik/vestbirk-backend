@@ -1,7 +1,8 @@
 All: start-local
 
 build:
-	docker build -t vestbirk-nginx nginx
+	docker build -t vestbirk-api vestbirk/
+	docker build -t vestbirk-nginx nginx/
 
 start-local:
 	docker-compose up -d nginx
