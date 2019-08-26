@@ -20,6 +20,9 @@ jobs:
         steps:
             - setup_remote_docker
             - checkout
+            - run:
+                docker login repo.treescale.com
+              docker push repo.treescale.com/jenshenrik/vestbirk-backend:latest
             
 
 workflows:
