@@ -1,9 +1,17 @@
+setup: &default
+    docker:
+        - image: circleci/python:3.6.1
+    working_directory: ~/repo
+    
 version: 2
 
 jobs:
     build:
-        docker:
-            - image: circleci/python:3.6.1
+        <<: *default
         steps:
+            - setup_remote_docker
             - checkout
-            - run: echo "A first hello world!"
+            - run:
+                name: Build
+                command: |
+                    make build
