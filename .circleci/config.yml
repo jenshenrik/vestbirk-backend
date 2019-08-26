@@ -15,6 +15,12 @@ jobs:
                 name: Build
                 command: |
                     make build
+    push_images:
+        <<: *default
+        steps:
+            - setup_remote_docker
+            - checkout
+            
 
 workflows:
     version: 2
