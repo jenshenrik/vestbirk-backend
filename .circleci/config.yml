@@ -30,7 +30,7 @@ jobs:
                     make build
 
                     docker tag vestbirk-api:latest repo.treescale.com/jenshenrik/vestbirk-backend
-                    #                    docker push repo.treescale.com/jenshenrik/vestbirk-backend:latest
+                    docker push repo.treescale.com/jenshenrik/vestbirk-backend:latest
             
 
 workflows:
@@ -38,6 +38,4 @@ workflows:
     build_and_test:
         jobs:
             - build
-            - push_images:
-                requires:
-                    - build
+            - push_images
