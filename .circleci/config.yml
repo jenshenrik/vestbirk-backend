@@ -28,7 +28,7 @@ jobs:
                 name: Push image
                 command: |
                     docker tag vestbirk-api:latest repo.treescale.com/jenshenrik/vestbirk-backend
-                    docker push repo.treescale.com/jenshenrik/vestbirk-backend:latest
+                    #                    docker push repo.treescale.com/jenshenrik/vestbirk-backend:latest
             
 
 workflows:
