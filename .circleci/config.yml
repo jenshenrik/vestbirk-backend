@@ -22,7 +22,7 @@ jobs:
             - checkout
             - run: |
                 docker login repo.treescale.com
-                docker push repo.treescale.com/jenshenrik/vestbirk-backend:latest
+                #                docker push repo.treescale.com/jenshenrik/vestbirk-backend:latest
             
 
 workflows:
