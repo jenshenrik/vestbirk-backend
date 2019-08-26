@@ -27,6 +27,8 @@ jobs:
             - run:
                 name: Push image
                 command: |
+                    make build
+
                     docker tag vestbirk-api:latest repo.treescale.com/jenshenrik/vestbirk-backend
                     #                    docker push repo.treescale.com/jenshenrik/vestbirk-backend:latest
             
