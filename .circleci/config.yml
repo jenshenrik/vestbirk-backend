@@ -21,7 +21,7 @@ jobs:
             - setup_remote_docker
             - checkout
             - run: |
-                docker login repo.treescale.com
+                docker login repo.treescale.com --username jenshenrik --password-stdin
                 #                docker push repo.treescale.com/jenshenrik/vestbirk-backend:latest
             
 
