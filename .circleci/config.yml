@@ -20,9 +20,15 @@ jobs:
         steps:
             - setup_remote_docker
             - checkout
-            - run: |
-                docker login repo.treescale.com --username $DOCKER_USER --password $DOCKER_PASSWORD
-                docker push repo.treescale.com/jenshenrik/vestbirk-backend:latest
+            - run: 
+                name: Login to TreeScale
+                command: |
+                    docker login repo.treescale.com --username $DOCKER_USER --password $DOCKER_PASSWORD
+            - run:
+                name: Push image
+                command: |
+                    docker tag vestbirk-backend:latest repo.treescale.com/jenshenrik/vestbirk-backend
+                    docker push repo.treescale.com/jenshenrik/vestbirk-backend:latest
             
 
 workflows:
