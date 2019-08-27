@@ -2,14 +2,14 @@ version: '2.1'
 
 services:
     nginx:
-        image: vestbirk-nginx:latest
+        image: repo.treescale.com/jenshenrik/vestbirk-nginx:latest
         ports:
             - "80:80"
         depends_on:
             - api
 
     api:
-        image: vestbirk-api:latest
+        image: repo.treescale.com/jenshenrik/vestbirk-api:latest
         environment:
             - VESTBIRK_ENVIRONMENT=development
             - VESTBIRK_DEBUG=TRUE
