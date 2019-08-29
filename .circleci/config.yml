@@ -29,8 +29,8 @@ jobs:
                 command: |
                     make build
 
-                    docker tag vestbirk-nginx:latest repo.treescale.com/jenshenrik/vestbirk-nginx
-                    docker push repo.treescale.com/jenshenrik/vestbirk-nginx
+                    #docker tag vestbirk-nginx:latest repo.treescale.com/jenshenrik/vestbirk-nginx
+                    #                    docker push repo.treescale.com/jenshenrik/vestbirk-nginx
                     
                     docker tag vestbirk-api:latest repo.treescale.com/jenshenrik/vestbirk-api
                     docker push repo.treescale.com/jenshenrik/vestbirk-api
