@@ -61,4 +61,4 @@ workflows:
                             - master
             - deploy:
                 requires:
-                    - push-images
+                    - push_images
