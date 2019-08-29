@@ -55,7 +55,3 @@ workflows:
             - push_images:
                 requires:
                     - build
-                filters:
-                    branches:
-                        only:
-                            - master
