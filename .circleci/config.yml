@@ -23,18 +23,17 @@ jobs:
             - run: 
                 name: Login to TreeScale
                 command: |
-                    docker login repo.treescale.com --username $DOCKER_USER --password $DOCKER_PASSWORD
+                    docker login --username $DOCKER_USER --password $DOCKER_PASSWORD cloud.canister.io:5000
             - run:
-                name: Build and push images
+                name: Build andpPush images
                 command: |
                     make build
 
-                    docker tag vestbirk-nginx:latest repo.treescale.com/jenshenrik/vestbirk-nginx
-                    docker push repo.treescale.com/jenshenrik/vestbirk-nginx
-                    
-                    docker tag vestbirk-api:latest repo.treescale.com/jenshenrik/vestbirk-api
-                    docker push repo.treescale.com/jenshenrik/vestbirk-api
+                    docker tag vestbirk-api cloud.canister.io:5000/jenshenrik/vestbirk-api
+                    docker push cloud.canister.io:5000/jenshenrik/vestbirk-api
             
+                    docker tag vestbirk-nginx cloud.canister.io:5000/jenshenrik/vestbirk-nginx
+                    docker push cloud.canister.io:5000/jenshenrik/vestbirk-nginx
 
 workflows:
     version: 2
