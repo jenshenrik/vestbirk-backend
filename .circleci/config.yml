@@ -28,11 +28,7 @@ jobs:
                 name: Build and push images
                 command: |
                     make build
-
-                    docker tag vestbirk-api cloud.canister.io:5000/jenshenrik/vestbirk-api
                     docker push cloud.canister.io:5000/jenshenrik/vestbirk-api
-            
-                    docker tag vestbirk-nginx cloud.canister.io:5000/jenshenrik/vestbirk-nginx
                     docker push cloud.canister.io:5000/jenshenrik/vestbirk-nginx
     deploy:
         machine:
