@@ -1,13 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404
+from django.core import serializers
 
-#from vestbirk.guilds.models import Guild
+from vestbirk.utils import json_response
+from guilds.models import Guild
 
 # Create your views here.
 
 def index(request):
-    return json_response('Hello world!')
-    #lguilds = Guild.objects.all()
-    #return json_response(guilds)
+    guilds = Guild.objects.all()
+    data = serializers.serialize('json', guilds, fields=('title', 'short_text', 'id'))
+    return json_response(data)
 
 def guild_by_id(request, id):
-    return json_response(id)
+    guild = get_object_or_404(Guild, id=id)
+    data = serializers.serialize('json', guild)
+    return json_response(data)
