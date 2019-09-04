@@ -2,6 +2,7 @@
 python manage.py makemigrations
 python manage.py migrate
 python manage.py collectstatic --noinput
+python manage.py loaddata guilds/initial_data.json
 
 # Start gunicorn processes
 echo Starting Gunicorn
