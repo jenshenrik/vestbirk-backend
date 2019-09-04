@@ -5,7 +5,7 @@
         "fields": {
             "title": "Test",
             "short_text": "testest",
-            "text": "asdf asdf asdf"
+            "text": "<p>asdf <strong>asdf</strong> asdf</p>"
         }
     }
 ]
