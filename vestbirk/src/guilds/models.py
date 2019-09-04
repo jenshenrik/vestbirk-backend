@@ -20,6 +20,15 @@ class Guild(models.Model):
     facebook_url = models.CharField(max_length=500, blank=True)
     contact_person = models.ForeignKey(ContactPerson, on_delete=models.CASCADE, null=True)
 
+    def as_dict(self):
+        guild = {
+            "id": self.id,
+            "title": self.title,
+            "short_text": self.short_text,
+            "text": self.text
+        }
+        return guild
+
     def __str__(self):
         return self.title
 

@@ -13,5 +13,4 @@ def index(request):
 
 def guild_by_id(request, id):
     guild = get_object_or_404(Guild, id=id)
-    data = serializers.serialize('json', guild)
-    return json_response(data)
+    return json_response(guild.as_dict())
