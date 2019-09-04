@@ -1,5 +1,7 @@
 from django.db import models
 
+from tinymce import HTMLField
+
 # Create your models here.
 class ContactPerson(models.Model):
     FirstName = models.CharField(max_length=100)
@@ -14,7 +16,7 @@ class ContactPerson(models.Model):
 class Guild(models.Model):
     title = models.CharField(max_length=200)
     short_text = models.TextField(max_length=500)
-    text = models.TextField()
+    text = HTMLField('Content')
 
     homepage_url = models.CharField(max_length=500, blank=True)
     facebook_url = models.CharField(max_length=500, blank=True)
