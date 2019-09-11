@@ -4,7 +4,7 @@ services:
     nginx:
         image: cloud.canister.io:5000/jenshenrik/vestbirk-nginx:latest
         ports:
-            - "80:80"
+            - "81:81"
         depends_on:
             - api
 
