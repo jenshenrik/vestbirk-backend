@@ -11,7 +11,8 @@ def json_response(response_dict, status=200):
     Convert dictionary to JSON and return as a HTTP Response with JSON content
     """
     response = HttpResponse(
-        json.dumps(response_dict),
+        #json.dumps(response_dict),
+        response_dict,
         content_type="application/json",
         status=status
     )
